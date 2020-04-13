@@ -1,0 +1,19 @@
+c-accordion {
+  display: block;
+  width: 100%;
+
+  .c-accordion {
+    width: 100%;
+    //background-color: #eeeeee;
+
+    .c-accordion-header {
+      width: 100%;
+      border-bottom: 1px solid gray;
+      line-height: 1.5em;
+    }
+
+    .c-accordion-content > * {
+      padding-top: 5px;
+    }
+  }
+}

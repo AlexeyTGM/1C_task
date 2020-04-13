@@ -1,0 +1,52 @@
+﻿<script type="text/html" id="c-view">
+  <div class="c-view-header"></div>
+  <div class="c-view-content">
+    <!-- ko with: viewModel -->
+    <!-- ko template: templateName -->
+    <!-- /ko -->
+    <!-- /ko -->
+  </div>
+</script>
+
+<script type="text/html" id="c-empty-view">
+  View hasn't been found...
+</script>
+
+<script type="text/html" id="c-list-view">
+  <!-- ko if: ready -->
+  <table>
+    <tbody>
+      <tr>
+        <th>
+          <div class="c-inline-actions">
+            <a class="c-app-action" data-bind="attr: { href: getDetailUrl() }">🗎</a>
+          </div>
+        </th>
+        <!-- ko foreach: visibleProperties -->
+        <th data-bind="text: displayName"></th>
+        <!-- /ko -->
+      </tr>
+      <!-- ko foreach: data() || []  -->
+      <tr>
+        <td>
+          <div class="c-inline-actions">
+            <a class="c-app-action" data-bind="attr: { href: $parent.getDetailUrl(id) }">🖉</a>
+          </div>
+        </td>
+        <!-- ko foreach: $parent.visibleProperties -->
+        <td>
+          <a data-bind="text: $parent[name]"></a>
+        </td>
+        <!-- /ko -->
+      </tr>
+      <!-- /ko -->
+    </tbody>
+  </table>
+  <!-- /ko -->
+</script>
+
+<script type="text/html" id="c-detail-view">
+  <!-- ko if: ready -->
+  <c-property-grid params="target: data, type: type, properties: visibleProperties"></c-property-grid>
+  <!-- /ko -->
+</script>

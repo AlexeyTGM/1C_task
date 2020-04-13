@@ -1,0 +1,31 @@
+<script type="text/html" id="c-text-editor">
+    <span class="c-editor-label" data-bind="text: title"></span>
+    <input class="c-editor-value" data-bind="value: value" />
+</script>
+
+<script type="text/html" id="c-view-editor-content">
+    <c-view params="url: value"></c-view>
+</script>
+
+<script type="text/html" id="c-view-editor">
+    <c-accordion params="title: title, data: { value: value }, contentTemplate: 'c-view-editor-content'"></c-accordion>
+</script>
+
+<script type="text/html" id="c-lookup-editor">
+  <span class="c-editor-label" data-bind="text: title"></span>
+  <select class="c-editor-value" data-bind="options: options.items, optionsText: options.text(), optionsValue: 'id', value: value"></select>
+</script>
+
+<script type="text/html" id="c-lookup-editor-simple">
+  <span class="c-editor-label" data-bind="text: title"></span>
+  <select class="c-editor-value" data-bind="options: options.items, value: value"></select>
+</script>
+
+<script type="text/html" id="c-property-grid">
+    <!-- ko foreach: editors -->
+    <div class="c-editor-holder">
+        <!-- ko template: templateName -->
+        <!-- /ko -->
+    </div>
+    <!-- /ko -->
+</script>

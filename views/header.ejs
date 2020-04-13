@@ -1,0 +1,13 @@
+<header>
+  <div class="c-app-title">
+    <%= title %>
+  </div>
+  <div class="c-app-actions">
+    <!-- ko foreach: actions -->
+    <div
+      class="c-app-action"
+      data-bind="text: image, attr: { title: text }, click: action"
+    ></div>
+    <!-- /ko -->
+  </div>
+</header>

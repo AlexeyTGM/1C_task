@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <%- partial('header.ejs', { title: title }) %> <%- body %> <%-
+    partial('footer.ejs') %>
+  </body>
+
+  <link href="frontend.css" rel="stylesheet" />
+  <script src="frontend.js"></script>
+  <script>
+    Application.menu = {
+      items: JSON.parse(
+        decodeURI("<%= encodeURI(JSON.stringify(menuItems)) %>")
+      ),
+    };
+    Application.start(document.getElementsByClassName("c-main")[0]);
+  </script>
+</html>

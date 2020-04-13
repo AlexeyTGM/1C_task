@@ -1,0 +1,55 @@
+c-view {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: inline-block;
+
+    table {
+        width: 100%;
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
+        tr:nth-child(odd) {
+           background-color: #fff;
+        }
+        th	{
+            background-color: darkgray;
+            color: white;
+        }
+
+        .c-inline-actions {
+          .c-app-action {
+            text-decoration: none;
+            color: black;
+          }
+        }
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .c-editor-holder {
+      width: 100%;
+      margin: 5px 0;
+      line-height: 1.2em;
+
+      .c-editor-label {
+        display: inline-block;
+        width: 35%;
+        vertical-align: middle;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .c-editor-value {
+        width: calc(65% - 4px);
+      }
+    }
+}

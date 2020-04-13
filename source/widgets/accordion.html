@@ -1,0 +1,19 @@
+<script type="text/html" id="c-accordion">
+	<div class="c-accordion">
+        <div class="c-accordion-header" data-bind="click: toggle">
+            <!-- ko if: open -->
+            ▽
+            <!-- /ko -->
+            <!-- ko ifnot: open -->
+            ▷
+            <!-- /ko -->
+            <span data-bind="text: title"></span>
+        </div>
+        <div class="c-accordion-content">
+            <!-- ko if: open -->
+                <!-- ko template: { name: contentTemplate, data: data } -->
+                <!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+</script>

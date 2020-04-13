@@ -1,0 +1,32 @@
+﻿<script type="text/html" id="c-tree-view-item">
+<div class="c-item-container" data-bind="style: { paddingLeft: (level - 1) * 15 + 'px' }, click: itemClick">
+<div class="c-items-collapser">
+<!-- ko if: hasItems -->
+<!-- ko ifnot: collapsed -->
+▽
+<!-- /ko -->
+<!-- ko if: collapsed -->
+▷
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<div data-bind="text: text"></div>
+</div>
+<!-- ko if: hasItems -->
+<div class="c-child-items-container" data-bind="style: { height: collapsed() ? '0px' : items().length * 25 + 'px' }">
+    <!-- ko foreach: items -->
+    <!-- ko template: 'c-tree-view-item' -->
+    <!-- /ko -->
+    <!-- /ko -->
+</div>
+<!-- /ko -->
+</script>
+
+<script type="text/html" id="c-tree-view">
+<div class="c-child-items-container">
+    <!-- ko foreach: items -->
+    <!-- ko template: 'c-tree-view-item' -->
+    <!-- /ko -->
+    <!-- /ko -->
+</div>
+</script>
